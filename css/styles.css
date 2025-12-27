@@ -5,8 +5,7 @@
 
 @font-face {
   font-family: "CD Ovuer";
-  src: url("/xmas_res/assets/fonts/AnyConv.com__CDOvuer-Regular.woff2")
-    format("woff2");
+  src: url("/xmas_res/assets/fonts/CDOvuer-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,8 +13,7 @@
 
 @font-face {
   font-family: "PT Sans Narrow";
-  src: url("..assets/fonts/AnyConv.com__PT_Sans-Narrow-Web-Regular.woff2")
-    format("woff2");
+  src: url("..assets/fonts/PT_Sans-Narrow-Web-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
