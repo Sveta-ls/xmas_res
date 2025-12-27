@@ -2,6 +2,25 @@
   outline: none;
   margin: 0;
 }
+
+@font-face {
+  font-family: "CD Ovuer";
+  src: url("/xmas_res/assets/fonts/assets/fonts/AnyConv.com__CDOvuer-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("/xmas_res/assets/fonts/assets/fonts/AnyConv.com__PT_Sans-Narrow-Web-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background: #0d2115;
   color: aliceblue;
