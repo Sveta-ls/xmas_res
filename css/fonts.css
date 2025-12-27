@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "CD Ovuer";
+  src: url("../assets/fonts/CDOvuer-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("../assets/fonts/PT_Sans-Narrow-Web-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
