@@ -232,7 +232,7 @@ body {
     filter: brightness(1);
   }
   50% {
-    transform: scale(1.03);
+    transform: scale(1.06);
     filter: brightness(1.1);
   }
   100% {
