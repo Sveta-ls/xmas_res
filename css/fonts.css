@@ -1,6 +1,7 @@
 @font-face {
   font-family: "CD Ovuer";
-  src: url("../assets/fonts/CDOvuer-Regular.woff") format("woff");
+  src: url("../assets/fonts/assets/fonts/AnyConv.com__CDOvuer-Regular.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: "PT Sans Narrow";
-  src: url("../assets/fonts/PT_Sans-Narrow-Web-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/assets/fonts/AnyConv.com__PT_Sans-Narrow-Web-Regular.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
