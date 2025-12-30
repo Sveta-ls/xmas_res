@@ -142,7 +142,7 @@ body {
   align-items: flex-end;
   justify-content: flex-end;
   margin-left: 20%;
-  width: 100%;
+  width: 80%;
 }
 
 .info_right_content {
@@ -186,7 +186,7 @@ body {
 
 .info_left_content {
   display: flex;
-  flex-direction: column; /* колонка */
+  flex-direction: column;
   text-align: left;
 }
 
