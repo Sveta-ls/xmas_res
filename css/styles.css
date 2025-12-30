@@ -126,11 +126,10 @@ body {
   text-decoration: none;
 }
 
-/* info blocks */
 .info_right {
   width: 100%;
   display: flex;
-  flex-direction: column; /* блок сам по себе колонка */
+  flex-direction: column;
   justify-content: flex-end;
   margin-top: 130px;
 }
@@ -146,17 +145,16 @@ body {
 }
 
 .info_right_content {
-  display: flex; /* flex для контента */
-  flex-direction: column; /* важный момент: колонка */
+  display: flex;
+  flex-direction: column;
   text-align: right;
 }
 
-/* тексты */
 .info_r_h {
   color: #f6dfb8;
   font-family: "CD Ovuer", sans-serif;
   font-size: 60px;
-  width: 70%;
+  width: 75%;
 }
 
 .info_r_p {
@@ -203,7 +201,7 @@ body {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 14px;
   padding-bottom: 20px;
-  width: 70%;
+  width: 75%;
   margin-left: 15%;
 }
 
