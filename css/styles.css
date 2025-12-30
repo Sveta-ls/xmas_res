@@ -272,3 +272,74 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+}
+
+@keyframes confettiLeft {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(-30px, -30px) rotate(45deg) scale(1);
+  }
+  100% {
+    transform: translate(
+        calc(-100px - var(--random-x, 300px)),
+        calc(100vh + var(--random-y, 200px))
+      )
+      rotate(calc(720deg + var(--random-rotate, 360deg)));
+    opacity: 0;
+  }
+}
+
+@keyframes confettiRight {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(30px, -30px) rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: translate(
+        calc(100px + var(--random-x, 300px)),
+        calc(100vh + var(--random-y, 200px))
+      )
+      rotate(calc(-720deg - var(--random-rotate, 360deg)));
+    opacity: 0;
+  }
+}
+
+/* Анимация для кнопки */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.celebrating {
+  animation: pulse 0.5s ease-in-out;
+}
