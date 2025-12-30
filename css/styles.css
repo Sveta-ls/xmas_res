@@ -79,7 +79,17 @@ body {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 130px;
-  line-height: 90%;
+  line-height: 92%;
+  color: #f6dfb8;
+}
+
+.p_wrap_no_bottom_m {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 14px;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 130px;
+  line-height: 92%;
   color: #f6dfb8;
 }
 
@@ -155,7 +165,7 @@ body {
   color: #f6dfb8;
   font-family: "CD Ovuer", sans-serif;
   font-size: 60px;
-  line-height: 90%;
+  line-height: 92%;
   width: 80%;
 }
 
@@ -163,7 +173,7 @@ body {
   color: #f6dfb8;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 14px;
-  line-height: 90%;
+  line-height: 92%;
   width: 80%;
   margin-top: 20px;
 }
@@ -196,7 +206,7 @@ body {
   color: #f6dfb8;
   font-family: "CD Ovuer", sans-serif;
   font-size: 60px;
-  line-height: 90%;
+  line-height: 92%;
   width: 70%;
   margin-left: 15%;
 }
@@ -206,7 +216,7 @@ body {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 14px;
   padding-bottom: 20px;
-  line-height: 90%;
+  line-height: 92%;
   width: 70%;
   margin-left: 15%;
   margin-top: 20px;
