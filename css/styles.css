@@ -223,6 +223,15 @@ body {
   max-width: 100%;
 }
 
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
 /* animation */
 @keyframes simple-glow {
   0% {
