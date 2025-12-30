@@ -40,15 +40,17 @@ document.querySelectorAll(".click-img").forEach((img) => {
 });
 
 function launchConfetti() {
-  const container =
+  // Ищем контейнер - проверяем оба варианта
+  let container =
     document.getElementById("confettiContainer") ||
     document.querySelector(".confetti-container");
 
+  // Если контейнера нет - создаем
   if (!container) {
-    const newContainer = document.createElement("div");
-    newContainer.id = "confettiContainer";
-    newContainer.className = "confetti-container";
-    newContainer.style.cssText = `
+    container = document.createElement("div");
+    container.id = "confettiContainer";
+    container.className = "confetti-container";
+    container.style.cssText = `
       position: fixed;
       top: 0;
       left: 0;
@@ -56,19 +58,20 @@ function launchConfetti() {
       height: 100%;
       pointer-events: none;
       z-index: 9999;
+      overflow: hidden;
     `;
-    document.body.appendChild(newContainer);
+    document.body.appendChild(container);
+    console.log("Контейнер для конфетти создан!");
   }
 
   const btn = document.getElementById("confettiBtn");
-  if (!btn) return;
 
-  // Анимация кнопки
-  btn.classList.add("celebrating");
-  btn.disabled = true;
-  btn.textContent = "🎉 Ура! 🎉";
+  if (!btn) {
+    console.error("Кнопка с id='confettiBtn' не найдена!");
+    return;
+  }
 
-  // Цвета
+  // Цвета для конфетти
   const colors = [
     "#FF6B6B",
     "#4ECDC4",
@@ -76,51 +79,90 @@ function launchConfetti() {
     "#06D6A0",
     "#118AB2",
     "#EF476F",
+    "#FF9A76",
+    "#A3DE83",
+    "#FE5F55",
+    "#9B5DE5",
+    "#F15BB5",
+    "#00BBF9",
   ];
 
-  // Создаем конфетти
-  for (let side = 0; side < 2; side++) {
-    for (let i = 0; i < 40; i++) {
-      setTimeout(() => {
-        const confetti = document.createElement("div");
-        const color = colors[Math.floor(Math.random() * colors.length)];
+  // Запускаем конфетти с обеих сторон
+  createConfettiSide("left");
+  createConfettiSide("right");
 
-        // Одинаковый размер и форма
-        const size = 12; // одинаковый размер
-
-        confetti.style.cssText = `
-          position: fixed;
-          width: ${size}px;
-          height: ${size}px;
-          background: ${color};
-          border-radius: 50%;
-          left: ${
-            side === 0 ? Math.random() * 40 + 5 : Math.random() * 40 + 55
-          }%;
-          top: 50px;
-          z-index: 9999;
-          animation: ${side === 0 ? "confettiLeft" : "confettiRight"} ${
-          1.5 + Math.random() * 1.5
-        }s ease-out ${Math.random() * 0.5}s forwards;
-        `;
-
-        document.body.appendChild(confetti);
-
-        // Удаляем через 3 секунды
-        setTimeout(() => confetti.remove(), 3000);
-      }, i * 15 + side * 300);
-    }
-  }
-
-  // Сбрасываем кнопку
   setTimeout(() => {
     btn.classList.remove("celebrating");
     btn.disabled = false;
     btn.textContent = "вот сюда!";
   }, 3000);
+
+  function createConfettiSide(side) {
+    const count = 40;
+    const confettiSize = 12; // Одинаковый размер для всех конфетти
+
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        // Одинаковая позиция для всех конфетти с каждой стороны
+        const startLeft =
+          side === "left"
+            ? Math.random() * 30 + 5 // 5-35% слева
+            : Math.random() * 30 + 65; // 65-95% справа
+
+        // Одинаковые стили для всех конфетти
+        confetti.style.cssText = `
+          position: absolute;
+          left: ${startLeft}%;
+          top: 50px;
+          width: ${confettiSize}px;
+          height: ${confettiSize}px;
+          background-color: ${color};
+          border-radius: 50%;
+          opacity: 0;
+        `;
+
+        // Случайные параметры для анимации
+        const randomX = 100 + Math.random() * 200;
+        const randomY = 100 + Math.random() * 200;
+        const randomRotate = Math.random() * 360;
+
+        confetti.style.setProperty("--random-x", randomX + "px");
+        confetti.style.setProperty("--random-y", randomY + "px");
+        confetti.style.setProperty("--random-rotate", randomRotate + "deg");
+
+        const duration = 1.5 + Math.random() * 1.5;
+        const delay = Math.random() * 0.5;
+
+        // Анимация
+        confetti.style.animation =
+          side === "left"
+            ? `confettiLeft ${duration}s ease-out ${delay}s forwards`
+            : `confettiRight ${duration}s ease-out ${delay}s forwards`;
+
+        container.appendChild(confetti);
+
+        // Удаляем через 3.5 секунды
+        setTimeout(() => {
+          if (confetti.parentNode === container) {
+            container.removeChild(confetti);
+          }
+        }, 3500);
+      }, i * 20);
+    }
+  }
 }
 
-// Вешаем обработчик
-document
-  .getElementById("confettiBtn")
-  ?.addEventListener("click", launchConfetti);
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("confettiBtn");
+  if (btn) {
+    btn.addEventListener("click", launchConfetti);
+    console.log("Кнопка конфетти готова!");
+  } else {
+    console.error("Кнопка 'confettiBtn' не найдена в DOM!");
+  }
+});
