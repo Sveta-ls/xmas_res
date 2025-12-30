@@ -32,7 +32,6 @@ function renderInfoRight(id, data) {
   `;
 }
 
-/* анимация клика */
 document.querySelectorAll(".click-img").forEach((img) => {
   img.addEventListener("click", () => {
     img.classList.add("ripple-animation");
