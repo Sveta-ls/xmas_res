@@ -4,7 +4,7 @@ fetch("data/info.json")
     renderInfoLeft("info-left-1", info[0]);
     renderInfoRight("info-right-1", info[1]);
     renderInfoLeft("info-left-2", info[2]);
-    renderInfoLeft("info-right-2", info[3]);
+    renderInfoRight("info-right-2", info[3]);
   });
 
 function renderInfoLeft(id, data) {
