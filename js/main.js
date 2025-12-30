@@ -132,3 +132,7 @@ function launchConfetti() {
     }
   }
 }
+
+document
+  .getElementById("confettiBtn")
+  .addEventListener("click", launchConfetti);
