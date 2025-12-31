@@ -248,6 +248,10 @@ body {
   margin: 40px 15% 60px 15%;
 }
 
+.g_grid {
+  min-height: 100vh;
+}
+
 /* animation */
 @keyframes simple-glow {
   0% {
