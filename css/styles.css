@@ -250,7 +250,7 @@ body {
   margin: 40px 15% 60px 15%;
 }
 
-.g_grid {
+.grid-2x2 img {
   width: 100%;
   height: 100%;
   object-fit: contain;

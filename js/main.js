@@ -39,25 +39,6 @@ document.querySelectorAll(".click-img").forEach((img) => {
   });
 });
 
-document.querySelectorAll(".g_grid").forEach((img) => {
-  img.addEventListener("click", () => {
-    img.classList.add("ripple-animation");
-    setTimeout(() => img.classList.remove("ripple-animation"), 500);
-  });
-});
-
-document.querySelectorAll(".grid-2x2 img").forEach((img) => {
-  img.addEventListener("click", function () {
-    document.querySelectorAll(".grid-2x2 img").forEach((i) => {
-      i.classList.remove("clicked");
-    });
-    this.classList.add("clicked");
-    setTimeout(() => {
-      this.classList.remove("clicked");
-    }, 500);
-  });
-});
-
 function launchConfetti() {
   let container =
     document.getElementById("confettiContainer") ||
