@@ -40,12 +40,9 @@ document.querySelectorAll(".click-img").forEach((img) => {
 });
 
 function launchConfetti() {
-  // Ищем контейнер - проверяем оба варианта
   let container =
     document.getElementById("confettiContainer") ||
     document.querySelector(".confetti-container");
-
-  // Если контейнера нет - создаем
   if (!container) {
     container = document.createElement("div");
     container.id = "confettiContainer";
@@ -61,17 +58,13 @@ function launchConfetti() {
       overflow: hidden;
     `;
     document.body.appendChild(container);
-    console.log("Контейнер для конфетти создан!");
   }
 
   const btn = document.getElementById("confettiBtn");
 
   if (!btn) {
-    console.error("Кнопка с id='confettiBtn' не найдена!");
     return;
   }
-
-  // Цвета для конфетти
   const colors = [
     "#FF6B6B",
     "#4ECDC4",
@@ -86,8 +79,6 @@ function launchConfetti() {
     "#F15BB5",
     "#00BBF9",
   ];
-
-  // Запускаем конфетти с обеих сторон
   createConfettiSide("left");
   createConfettiSide("right");
 
@@ -99,7 +90,7 @@ function launchConfetti() {
 
   function createConfettiSide(side) {
     const count = 40;
-    const confettiSize = 12; // Одинаковый размер для всех конфетти
+    const confettiSize = 12;
 
     for (let i = 0; i < count; i++) {
       setTimeout(() => {
@@ -108,13 +99,9 @@ function launchConfetti() {
 
         const color = colors[Math.floor(Math.random() * colors.length)];
 
-        // Одинаковая позиция для всех конфетти с каждой стороны
         const startLeft =
-          side === "left"
-            ? Math.random() * 30 + 5 // 5-35% слева
-            : Math.random() * 30 + 65; // 65-95% справа
+          side === "left" ? Math.random() * 30 + 5 : Math.random() * 30 + 65;
 
-        // Одинаковые стили для всех конфетти
         confetti.style.cssText = `
           position: absolute;
           left: ${startLeft}%;
@@ -126,7 +113,6 @@ function launchConfetti() {
           opacity: 0;
         `;
 
-        // Случайные параметры для анимации
         const randomX = 100 + Math.random() * 200;
         const randomY = 100 + Math.random() * 200;
         const randomRotate = Math.random() * 360;
@@ -138,15 +124,12 @@ function launchConfetti() {
         const duration = 1.5 + Math.random() * 1.5;
         const delay = Math.random() * 0.5;
 
-        // Анимация
         confetti.style.animation =
           side === "left"
             ? `confettiLeft ${duration}s ease-out ${delay}s forwards`
             : `confettiRight ${duration}s ease-out ${delay}s forwards`;
 
         container.appendChild(confetti);
-
-        // Удаляем через 3.5 секунды
         setTimeout(() => {
           if (confetti.parentNode === container) {
             container.removeChild(confetti);
@@ -161,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("confettiBtn");
   if (btn) {
     btn.addEventListener("click", launchConfetti);
-    console.log("Кнопка конфетти готова!");
   } else {
     console.error("Кнопка 'confettiBtn' не найдена в DOM!");
   }
