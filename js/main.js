@@ -39,7 +39,7 @@ document.querySelectorAll(".click-img").forEach((img) => {
   });
 });
 
-document.querySelectorAll(".grid-2x2 img").forEach((img) => {
+document.querySelectorAll(".g_grid").forEach((img) => {
   img.addEventListener("click", () => {
     img.classList.add("ripple-animation");
     setTimeout(() => img.classList.remove("ripple-animation"), 500);
