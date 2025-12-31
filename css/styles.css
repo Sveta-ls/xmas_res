@@ -1,6 +1,7 @@
 * {
   outline: none;
   margin: 0;
+  -moz-tap-highlight-color: transparent;
 }
 
 @font-face {
@@ -109,7 +110,6 @@ body {
   margin: auto;
 }
 
-/* button */
 .button_main {
   color: #0d2115;
   font-family: "CD Ovuer", sans-serif;
@@ -238,6 +238,7 @@ body {
   margin-top: 40px;
   margin-bottom: 40px;
   max-width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .grid-2x2 {
